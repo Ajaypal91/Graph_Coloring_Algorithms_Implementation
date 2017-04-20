@@ -30,13 +30,13 @@ Number of vertices in graph
 vertices (with newline)
 edges betweeen the vertices with spaces (with newline)
 
-For example:
-3
-a
-b
-c
-a b
-b c
+For example: </br>
+3</br>
+a</br>
+b</br>
+c</br>
+a b</br>
+b c</br>
 
 
 1) Greedy Algorithm with and without randomness
