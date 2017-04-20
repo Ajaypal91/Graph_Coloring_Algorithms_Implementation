@@ -19,7 +19,25 @@ Some of the applications of Graph coloring may include:
 The problem of minimization and maximization of colors, both are tackled using the algorithms defined below
 
 <h3> Algorithms used </h3>
-The following Algorithms are used in the implementation:
+The following Algorithms are used in the implementation: 
+
+<h3> How to work around </h3>
+After compiling all the files,
+Run the start.java file.
+For creating a graph. Update the sample.txt or any other file (in this case update the filename in start.java)
+The file should contains the following information (please not the vertex coloring problem tackled here is for directed graphs)
+Number of vertices in graph
+vertices (with newline)
+edges betweeen the vertices with spaces (with newline)
+
+For example:
+3
+a
+b
+c
+a b
+b c
+
 
 1) Greedy Algorithm with and without randomness
 2) Wigderson's Algorithm using BFS and DFS
