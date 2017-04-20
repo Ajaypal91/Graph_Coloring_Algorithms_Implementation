@@ -20,6 +20,9 @@ The problem of minimization and maximization of colors, both are tackled using t
 
 <h3> Algorithms used </h3>
 The following Algorithms are used in the implementation: 
+1) Greedy Algorithm with and without randomness
+2) Wigderson's Algorithm using BFS and DFS
+More algorithms on implementation will be updated
 
 <h3> How to work around </h3>
 After compiling all the files,
@@ -38,9 +41,5 @@ c</br>
 a b</br>
 b c</br>
 
-
-1) Greedy Algorithm with and without randomness
-2) Wigderson's Algorithm using BFS and DFS
-More algorithms on implementation will be updated
 
 There are various sources available online which may help. If I can help you in any way, please reach out at erajaypal91@gmail.com
