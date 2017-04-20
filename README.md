@@ -24,6 +24,9 @@ The following Algorithms are used in the implementation: </br>
 2) Wigderson's Algorithm using BFS and DFS</br>
 More algorithms on implementation will be updated
 
+<h4> Design Pattern Used </h4>
+This project is a good example and implementation of Strategy Design Pattern, in which all the underlying changing behavious of graph coloring algorithms are encapsulated and are used accordingly via interfaces. 
+
 <h3> How to work around </h3>
 After compiling all the files,
 Run the start.java file.
