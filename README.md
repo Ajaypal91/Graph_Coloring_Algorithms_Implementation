@@ -19,9 +19,9 @@ Some of the applications of Graph coloring may include:
 The problem of minimization and maximization of colors, both are tackled using the algorithms defined below
 
 <h3> Algorithms used </h3>
-The following Algorithms are used in the implementation: 
-1) Greedy Algorithm with and without randomness
-2) Wigderson's Algorithm using BFS and DFS
+The following Algorithms are used in the implementation: </br>
+1) Greedy Algorithm with and without randomness</br>
+2) Wigderson's Algorithm using BFS and DFS</br>
 More algorithms on implementation will be updated
 
 <h3> How to work around </h3>
