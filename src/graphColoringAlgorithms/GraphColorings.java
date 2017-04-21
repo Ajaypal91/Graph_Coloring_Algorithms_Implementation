@@ -1,4 +1,8 @@
+package graphColoringAlgorithms;
 import java.util.ArrayList;
+
+import graph.Graph;
+import graph.Vertex;
 
 public interface GraphColorings {
 

@@ -1,4 +1,10 @@
+package graphColoringAlgorithms;
 import java.util.ArrayList;
+
+import graph.Edge;
+import graph.Graph;
+import graph.Vertex;
+import modules.Colors;
 
 
 public class GraphColoringGreedy extends AbstractGraphColoring {

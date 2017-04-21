@@ -1,4 +1,7 @@
+package graph;
 import java.util.ArrayList;
+
+import graphColoringAlgorithms.GraphColorings;
 
 public abstract class AbstractGraph implements Graph{
 
