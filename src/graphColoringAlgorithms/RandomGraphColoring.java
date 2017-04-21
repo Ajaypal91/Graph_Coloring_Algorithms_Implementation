@@ -36,8 +36,7 @@ public class RandomGraphColoring extends AbstractGraphColoring {
 		
 		while (start < n){
 			//Assuming iterations to be half of the vertices left to co*lor
-			colorBestRandomVertexAtPosition(G, vertices,start, iterations);
-			System.out.println("Vertex at ind = " + start + " colored ");
+			colorBestRandomVertexAtPosition(G, vertices,start, iterations, Colors.maximumColorsAvailable());
 			start++;
 			iterations = (vertices.size() + 1 - start)/2;
 		}
@@ -53,7 +52,7 @@ public class RandomGraphColoring extends AbstractGraphColoring {
 		return true;
 	}
 	
-	public void colorBestRandomVertexAtPosition(Graph G, ArrayList<Vertex> vertices,int start, int iterations){
+	public void colorBestRandomVertexAtPosition(Graph G, ArrayList<Vertex> vertices,int start, int iterations, int numberOfColors){
 		
 		int bestIndexSoFar = start;
 		int bestColorSoFar = Integer.MAX_VALUE;
@@ -64,7 +63,7 @@ public class RandomGraphColoring extends AbstractGraphColoring {
 			
 			int ind = start  + rn.nextInt(n - start);
 			
-			for (int c = 0; c < Colors.maximumColorsAvailable(); c++){
+			for (int c = 0; c < numberOfColors; c++){
 				
 				vertices.get(ind).color = c;
 				
@@ -74,16 +73,17 @@ public class RandomGraphColoring extends AbstractGraphColoring {
 						bestIndexSoFar = ind;
 						bestColorSoFar = c;
 					}
-					vertices.get(ind).color = -1; //reset color
 					break;
 				}
+				vertices.get(ind).color = -1; //reset color
 				
 			}
 			
 		}
 		
 		//set color for the best vertex found
-		vertices.get(bestIndexSoFar).color = bestColorSoFar;
+		if (bestColorSoFar != Integer.MAX_VALUE)
+			vertices.get(bestIndexSoFar).color = bestColorSoFar;
 		
 		//update colors cardinality of graph
 		if (G.getColorsCardinality() < bestColorSoFar){
@@ -91,9 +91,11 @@ public class RandomGraphColoring extends AbstractGraphColoring {
 		}
 		
 		//swap the best index to start position.
-		Vertex temp = vertices.get(bestIndexSoFar);
-		vertices.set(bestIndexSoFar, vertices.get(start));
-		vertices.set(start, temp);
+		if (bestIndexSoFar != start){
+			Vertex temp = vertices.get(bestIndexSoFar);
+			vertices.set(bestIndexSoFar, vertices.get(start));
+			vertices.set(start, temp);
+		}
 		
 		
 	}
@@ -106,9 +108,35 @@ public class RandomGraphColoring extends AbstractGraphColoring {
 
 	@Override
 	public boolean isGraphColorable(Graph G, int noOfColors) {
-		// TODO Auto-generated method stub
-		System.out.println("This minimization problem is unimplemented");
-		return false;
+		
+		ArrayList<Vertex> vertices;
+		
+		if (shuffle)
+			vertices = shuffleVertices(G.getVertices());
+		else 
+			vertices = G.getVertices();
+		
+		int start = 0;
+		int iterations = (vertices.size() - start)/2;
+		
+		//color the first vertex
+		vertices.get(start).color = 0;
+		start++;
+		int n = vertices.size();
+		
+		while (start < n){
+			//Assuming iterations to be half of the vertices left to co*lor
+			colorBestRandomVertexAtPosition(G, vertices,start, iterations, noOfColors);
+			start++;
+			iterations = (vertices.size() + 1 - start)/2;
+		}
+		
+		for (Vertex v: vertices){
+			if (v.color == -1)
+				return false;
+		}
+		
+		return true;
 	}
 
 }
