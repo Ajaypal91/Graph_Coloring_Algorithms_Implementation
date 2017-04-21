@@ -1,9 +1,10 @@
+package graph;
 import java.util.HashMap;
 
 public class Vertex {
 	
-	HashMap<String, String> props;
-	int color;
+	public HashMap<String, String> props;
+	public int color;
 	
 	public Vertex(){
 		this.props = new HashMap<String, String>();

@@ -1,5 +1,9 @@
+package graphColoringAlgorithms;
 import java.util.ArrayList;
 import java.util.Random;
+
+import graph.Graph;
+import graph.Vertex;
 
 public abstract class AbstractGraphColoring implements GraphColorings{
 

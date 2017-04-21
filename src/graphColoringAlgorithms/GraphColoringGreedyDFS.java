@@ -1,13 +1,17 @@
+package graphColoringAlgorithms;
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Random;
+import java.util.Stack;
 
+import graph.Edge;
+import graph.Graph;
+import graph.Vertex;
+import modules.Colors;
 
-public class GraphColoringGreedyBFS extends AbstractGraphColoring {
+public class GraphColoringGreedyDFS extends AbstractGraphColoring {
 
 	public void printDescription(){
-		System.out.println("This is graph coloring implementation using Greedy Algorithm using BFS from a given vertex");
+		System.out.println("This is graph coloring implementation using Greedy Algorithm using DFS from a given vertex");
 		
 	}
 	
@@ -20,34 +24,27 @@ public class GraphColoringGreedyBFS extends AbstractGraphColoring {
 		return true;
 	}
 	
-	public Vertex getRandomVertex(Graph G){
-		ArrayList<Vertex> vertices = G.getVertices();
-		Random rn = new Random();
-		//select random vertex as starting vertex
-		return vertices.get(rn.nextInt(vertices.size()));
-	}
-	
-	
 	@Override
 	public void colorGraph(Graph G) {
 		
+		//select random vertex as starting vertex
 		Vertex v = this.getRandomVertex(G);
 		
-		System.out.println("Starting Vertex for BFS is = " + v.props.get("value"));
-		Queue<Vertex> queue = new LinkedList<>();
-		queue.add(v);
+		System.out.println("Starting Vertex for DFS is = " + v.props.get("value"));
+		Stack<Vertex> stk = new Stack<>();
+		stk.push(v);
 		int n = Colors.maximumColorsAvailable();
 		
-		while (!queue.isEmpty()){
+		while (!stk.isEmpty()){
 			
-			Vertex i = queue.poll();
+			Vertex i = stk.pop();
 			
 			ArrayList<Edge> edges = G.getEdgesFromAdj(i);
 			
 			//add adjacent non visited vertices to stack
 			for (Edge e : edges){
 				if (e.getEndVertex().color == -1)
-					queue.add(e.getEndVertex());
+					stk.push(e.getEndVertex());
 			}
 			
 			//find color for this vertex i
@@ -67,33 +64,42 @@ public class GraphColoringGreedyBFS extends AbstractGraphColoring {
 			}
 			
 		}
+		
 	}
 	
+
+	public Vertex getRandomVertex(Graph G){
+		ArrayList<Vertex> vertices = G.getVertices();
+		Random rn = new Random();
+		//select random vertex as starting vertex
+		return vertices.get(rn.nextInt(vertices.size()));
+	}
 	
 	@Override
 	public boolean isGraphColorable(Graph G, int noOfColors){
 		boolean status = true;
 		
 		Vertex v = this.getRandomVertex(G);
-		System.out.println("Checking if Graph is colorable using BFS");
-		System.out.println("Starting Vertex for BFS is = " + v.props.get("value"));
-		Queue<Vertex> queue = new LinkedList<>();
-		queue.add(v);
+		System.out.println("Checking if Graph is colorable using DFS");
+		System.out.println("Starting Vertex for DFS is = " + v.props.get("value"));
+		Stack<Vertex> stk = new Stack<>();
+		stk.push(v);
+		int n = Colors.maximumColorsAvailable();
 		
-		while (!queue.isEmpty()){
+		while (!stk.isEmpty()){
 			
-			Vertex i = queue.poll();
+			Vertex i = stk.pop();
 			
 			ArrayList<Edge> edges = G.getEdgesFromAdj(i);
 			
-			//add adjacent non visited vertices to queue
+			//add adjacent non visited vertices to stack
 			for (Edge e : edges){
 				if (e.getEndVertex().color == -1)
-					queue.add(e.getEndVertex());
+					stk.push(e.getEndVertex());
 			}
 			
 			//find color for this vertex i
-			for (int j =0; j < noOfColors; j++){
+			for (int j =0; j < n; j++){
 				
 				i.color = j;
 				
@@ -118,5 +124,6 @@ public class GraphColoringGreedyBFS extends AbstractGraphColoring {
 		
 		return status;
 	}
+	
 
 }

@@ -1,9 +1,17 @@
+package Main;
+import graph.Graph;
+import graph.GraphAdjListImpl;
+import graph.GraphAdjMatrixImpl;
+import graphColoringAlgorithms.GraphColoringBackTracking;
+import graphColoringAlgorithms.GraphColoringGreedy;
+import modules.Colors;
+import modules.FileIO;
 
 public class Start {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String path = "src/sample";
+		String path = "src/Files/sample";
 		//streamFileAndUpdateGraph(path);
 		
 		//find which graph should be implemented
@@ -18,7 +26,7 @@ public class Start {
 		
 		G.printAllVertexes();
 		G.printGraph();
-		G.setGraphColoringTechnique(new GraphColoringGreedy());
+		G.setGraphColoringTechnique(new GraphColoringBackTracking());
 		G.getGraphColoringObj().toggleShuffle();
 		G.colorGraph();
 		Colors.printColors(G);
