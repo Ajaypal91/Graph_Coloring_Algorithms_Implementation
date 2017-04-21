@@ -22,6 +22,7 @@ The problem of minimization and maximization of colors, both are tackled using t
 The following Algorithms are used in the implementation: </br>
 1) Greedy Algorithm with and without randomness</br>
 2) Wigderson's Algorithm using BFS and DFS</br>
+3) BackTracking </br>
 More algorithms on implementation will be updated
 
 <h4> Design Pattern Used </h4>
