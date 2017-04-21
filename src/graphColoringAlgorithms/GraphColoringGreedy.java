@@ -25,6 +25,7 @@ public class GraphColoringGreedy extends AbstractGraphColoring {
 		return true;
 	}
 	
+	
 	public void toggleShuffle(){
 		shuffle = !shuffle;
 	}
@@ -40,9 +41,12 @@ public class GraphColoringGreedy extends AbstractGraphColoring {
 		else 
 			vertices = G.getVertices();
 		
+		boolean status = false;
+		
 		for (Vertex v: vertices){
 			
 			ArrayList<Edge> edges = G.getEdgesFromAdj(v);
+			status = false;
 			
 			for (int i = 0; i < n; i++){
 				
@@ -53,11 +57,16 @@ public class GraphColoringGreedy extends AbstractGraphColoring {
 				}
 				
 				if (this.isSafe(edges)){
+					status = true;
 					break;	
 				}
 				
 			}
 			
+			//if could not find any color
+			if(!status){
+				v.color = -1; 
+			}
 		}
 		
 	}
