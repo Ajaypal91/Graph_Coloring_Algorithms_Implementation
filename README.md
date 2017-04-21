@@ -27,7 +27,9 @@ The following Algorithms are used in the implementation: </br>
 More algorithms on implementation will be updated
 
 <h4> Design Pattern Used </h4>
-This project is a good example and implementation of Strategy Design Pattern, in which all the underlying changing behavious of graph coloring algorithms are encapsulated and are used accordingly via interfaces. 
+This project is a good example and implementation of Strategy Design Pattern, in which all the underlying changing behavious of graph coloring algorithms are encapsulated and are used accordingly via interfaces. </br></br>
+
+![Alt text](/src/Daigram/design.png?raw=true "Design")
 
 <h3> How to work around </h3>
 After compiling all the files,
