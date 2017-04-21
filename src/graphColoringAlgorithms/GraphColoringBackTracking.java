@@ -9,6 +9,8 @@ import graph.Vertex;
 
 public class GraphColoringBackTracking extends AbstractGraphColoring {
 
+	boolean shuffle = false;
+	
 	@Override
 	public void colorGraph(Graph G) {
 		// TODO Auto-generated method stub
@@ -38,13 +40,13 @@ public class GraphColoringBackTracking extends AbstractGraphColoring {
 		return true;
 	}
 	
-	public boolean colorGraphUsingBackTrack(Graph G, ArrayList<Vertex> vertices, int index){
+	public boolean colorGraphUsingBackTrack(Graph G, ArrayList<Vertex> vertices, int index, int numberOfColors){
 		
 		//if all vertices are covered
 		if (index == vertices.size())
 			return true;
 		
-		for (int i = 0; i < Colors.maximumColorsAvailable(); i++){
+		for (int i = 0; i < numberOfColors; i++){
 			
 			//color vertex
 			vertices.get(index).color = i;
@@ -52,7 +54,7 @@ public class GraphColoringBackTracking extends AbstractGraphColoring {
 			//check if it safe
 			if (this.isSafe(G.getEdgesFromAdj(vertices.get(index)))){
 				//color next vertex
-				if (colorGraphUsingBackTrack(G, vertices, index+1))
+				if (colorGraphUsingBackTrack(G, vertices, index+1, numberOfColors))
 					return true;
 				//if next vertex was not colorable. reset the color and try next one
 				vertices.get(index).color = -1; //reset color
@@ -76,7 +78,7 @@ public class GraphColoringBackTracking extends AbstractGraphColoring {
 		else 
 			vertices = G.getVertices();
 		
-		return this.colorGraphUsingBackTrack(G, vertices, 0);
+		return this.colorGraphUsingBackTrack(G, vertices, 0, noOfColors);
 		
 	}
 
