@@ -24,6 +24,8 @@ The following Algorithms are used in the implementation: </br>
 2) Wigderson's Algorithm using BFS and DFS with and without randomness</br>
 3) BackTracking with and without randomness</br>
 4) Randomized Graph Coloring</br>
+5) WelsPowel Algorithm </br>
+6) Online Graph Coloring - First Fit </br>
 More algorithms on implementation will be updated
 
 <h4> Design Pattern Used </h4>
@@ -32,6 +34,7 @@ This project is a good example and implementation of Strategy Design Pattern, in
 ![Alt text](/src/Daigram/design.png?raw=true "Design")
 
 <h3> How to work around </h3>
+<h4> Running Offline Graph Coloring Algorithms: </h4>
 After compiling all the files,
 Run the start.java file.
 For creating a graph. Update the sample.txt or any other file (in this case update the filename in start.java)
@@ -47,6 +50,9 @@ b</br>
 c</br>
 a b</br>
 b c</br>
+<h4> Running Online Graph Coloring Algorithm: </h4>
+To run the first fit algorithm, run the OnlineStart.java file and add edges in the sample1.txt file, save them.
+As the vertices are added the graph will be colored on the fly with first fit algorithm. 
 
-
+</br></br>
 There are various sources available online which may help. If I can help you in any way, please reach out at erajaypal91@gmail.com
