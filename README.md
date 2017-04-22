@@ -54,5 +54,5 @@ b c</br>
 To run the first fit algorithm, run the OnlineStart.java file and add edges in the sample1.txt file, save them.
 As the vertices are added the graph will be colored on the fly with first fit algorithm. 
 
-
+</br></br>
 There are various sources available online which may help. If I can help you in any way, please reach out at erajaypal91@gmail.com
