@@ -25,7 +25,7 @@ The following Algorithms are used in the implementation: </br>
 3) BackTracking with and without randomness</br>
 4) Randomized Graph Coloring</br>
 5) WelsPowel Algorithm </br>
-6) Online Graph Coloring - First Fit </br>
+6) Online Graph Coloring - First Fit (This is a modified version of actual graph coloring, in which vertexes occurs dynamically. Here the edges are occuring dynamically.</br>
 More algorithms on implementation will be updated
 
 <h4> Design Pattern Used </h4>
