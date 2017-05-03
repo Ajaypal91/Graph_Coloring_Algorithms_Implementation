@@ -56,3 +56,9 @@ As the vertices are added the graph will be colored on the fly with first fit al
 
 </br></br>
 There are various sources available online which may help. If I can help you in any way, please reach out at erajaypal91@gmail.com
+
+<h4> Running Sudoku Application: </h4>
+Open SudokuSolver.java in Applications package. 
+Input your sudoku in any file in the Files folder and give the same file path to the sudokusolver.
+For the sudoku puzzle, in place of an unknown value input "."
+
