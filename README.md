@@ -11,7 +11,7 @@ In this project the problem of vertex coloring is being tackled.
 Some of the applications of Graph coloring may include: 
 1) Interval Schedulings 
 2) Register allocation: In compiler optimization, register allocation is the process of assigning a large number of target program variables onto a small number of CPU registers. This problem is also a graph coloring problem.
-3) Sudoku solver: Sudoku is also a variation of Graph coloring problem where every cell represents a vertex. There is an edge between two vertices if they are in same row or same column or same block.
+3) Sudoku solver: Sudoku is also a variation of Graph coloring problem where every cell represents a vertex. There is an edge between two vertices if they are in same row or same column or same block. (This application is available under Applications Package).
 4) Bipartite Graphs: We can check if a graph is Bipartite or not by coloring the graph using two colors. If a given graph is 2-colorable, then it is Bipartite, otherwise not. See this for more details.
 5) Map Coloring: Geographical maps of countries or states where no two adjacent cities cannot be assigned same color. Four colors are sufficient to color any map 
 
@@ -56,3 +56,9 @@ As the vertices are added the graph will be colored on the fly with first fit al
 
 </br></br>
 There are various sources available online which may help. If I can help you in any way, please reach out at erajaypal91@gmail.com
+
+<h4> Running Sudoku Application: </h4>
+Open SudokuSolver.java in Applications package. 
+Input your sudoku in any file in the Files folder and give the same file path to the sudokusolver.
+For the sudoku puzzle, in place of an unknown value input "."
+
