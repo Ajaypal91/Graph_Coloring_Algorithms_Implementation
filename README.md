@@ -118,8 +118,8 @@ This project is a good example and implementation of Strategy Design Pattern, in
 ![Alt text](/src/Daigram/design.png?raw=true "Design")
 
 
-<h3> How to work around </h3>
-<h4> Running Offline Graph Coloring Algorithms: </h4>
+<h2> How to work around </h2>
+<h3> Running Offline Graph Coloring Algorithms: </h3>
 After compiling all the files,
 Run the start.java file.
 For creating a graph. Update the sample.txt or any other file (in this case update the filename in start.java)
@@ -135,15 +135,17 @@ b</br>
 c</br>
 a b</br>
 b c</br>
-<h4> Running Online Graph Coloring Algorithm: </h4>
+<h3> Running Online Graph Coloring Algorithm: </h3>
 To run the first fit algorithm, run the OnlineStart.java file and add edges in the sample1.txt file, save them.
 As the vertices are added the graph will be colored on the fly with first fit algorithm. 
+
+<h3> Running Sudoku Application: </h3>
+Open SudokuSolver.java in Applications package. 
+Input your sudoku in any file in the Files folder and give the same file path to the sudokusolver.
+For the sudoku puzzle, in place of an unknown value input "."
 
 </br></br>
 There are various sources available online which may help. If I can help you in any way, please reach out at erajaypal91@gmail.com
 
-<h4> Running Sudoku Application: </h4>
-Open SudokuSolver.java in Applications package. 
-Input your sudoku in any file in the Files folder and give the same file path to the sudokusolver.
-For the sudoku puzzle, in place of an unknown value input "."
+
 
