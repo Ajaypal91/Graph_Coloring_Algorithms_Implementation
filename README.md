@@ -100,7 +100,7 @@ The exception was the backtracking one which, even after taking 4 hours, was not
 
 For testing out the various algorithms we implemented in our project, we chose a Facebook network graph containing anonymized social circles of Facebook. It is an undirected graph having 4,039 nodes and 88,234 edges. The following table summarizes the results:-
 
-![alt text](/src/Daigram/7.png)
+![alt text](/src/Daigram/9.png)
 
 It is evident from the above graph that Welsh Powell Algorithm performed the best, both in time taken and the number of colors used. The greedy algorithm were similar in terms of color usage, but Greedy and Greedy DFS took less than a minute to color the graph whereas the Greedy BFS took around 20 minutes for the same. The reason for this can be the structure of the graph having less number of levels but more number of adjacent vertices.</br>
 The backtracking algorithm took 88 colors to color the graph whereas Random coloring algorithm took 86 colors. These were the worst performing with each taking a couple of hours to color the graph.
